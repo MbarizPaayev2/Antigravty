@@ -10,6 +10,14 @@
 </head>
 <body>
 
+    <!-- Telemetry Heads-Up Display -->
+    <div class="telemetry-hud">
+        <div class="hud-item top-left"><span class="hud-label">ALT:</span> <span class="hud-value flicker">408 KM</span></div>
+        <div class="hud-item top-right"><span class="hud-label">VEL:</span> <span class="hud-value flicker">7.66 KM/S</span></div>
+        <div class="hud-item bottom-left"><span class="hud-label">COORDS:</span> <span class="hud-value flicker">0.000, 0.000</span></div>
+    </div>
+
+
     <!-- Global Navigation Header -->
     <header class="global-nav">
         <div class="nav-container">
@@ -18,10 +26,10 @@
             </div>
             
             <nav class="nav-links-center">
-                <a href="missions" class="nav-link">Missions</a>
-                <a href="galaxies" class="nav-link">Galaxies</a>
-                <a href="technology" class="nav-link">Technology</a>
-                <a href="about" class="nav-link">About</a>
+                <a href="#missions" class="nav-link">Missions</a>
+                <a href="#galaxies" class="nav-link">Galaxies</a>
+                <a href="#technology" class="nav-link">Technology</a>
+                <a href="#about" class="nav-link">About</a>
             </nav>
 
             <div class="nav-actions">
@@ -33,12 +41,14 @@
 
     <!-- Hero Section -->
     <section class="hero-container">
-        <img src="https://images-assets.nasa.gov/image/PIA22350/PIA22350~orig.jpg" alt="Space Hero" class="hero-bg">
+        <img src="assets/ksc-20260225-ph-csh01-0060orig.webp" alt="Space Hero" class="hero-bg">
         <div class="hero-overlay"></div>
+        <!-- scanning line overlay -->
+        <div class="scanner-line"></div>
         <div class="hero-content">
             <h1 class="hero-title">ANTIGRAVITY: BEYOND THE HORIZON</h1>
             <p class="hero-subtitle">Exploring the mechanics of zero-G and the future of deep space travel.</p>
-            <a href="missions" class="btn-primary">Discover More</a>
+            <a href="#missions" class="btn-primary">Discover More</a>
         </div>
     </section>
 
@@ -51,7 +61,7 @@
                 <!-- Card 1 -->
                 <article class="nasa-card">
                     <div class="card-image-wrapper">
-                        <img src="hubble-ugc12295-potw2330a.jpg" alt="Hubble Galaxy" class="card-image">
+                        <img src="assets/hubble-ugc12295-potw2330a.jpg" alt="Hubble Galaxy" class="card-image">
                     </div>
                     <div class="card-content">
                         <span class="card-tag">MISSION UPDATE</span>
@@ -63,7 +73,7 @@
                 <!-- Card 2 -->
                 <article class="nasa-card">
                     <div class="card-image-wrapper">
-                        <img src="file.jpg" alt="Planet Exploration" class="card-image">
+                        <img src="assets/file.jpg" alt="Planet Exploration" class="card-image">
                     </div>
                     <div class="card-content">
                         <span class="card-tag">EXPLORATION</span>
@@ -75,7 +85,7 @@
                 <!-- Card 3 -->
                 <article class="nasa-card">
                     <div class="card-image-wrapper">
-                        <img src="download.jpg" alt="Space Station" class="card-image">
+                        <img src="assets/download.jpg" alt="Space Station" class="card-image">
                     </div>
                     <div class="card-content">
                         <span class="card-tag">TECHNOLOGY</span>
@@ -91,7 +101,7 @@
     <section class="featured-feature">
         <div class="featured-container">
             <div class="featured-image">
-                <img src="Nasa.webp" alt="Spacecraft Concept">
+                <img src="assets/Nasa.webp" alt="Spacecraft Concept">
             </div>
             
             <div class="featured-content">
@@ -118,7 +128,7 @@
                     Our cutting-edge propulsion technology represents a quantum leap in space exploration capabilities. 
                     Leveraging theoretical physics and practical engineering, we're enabling missions once thought impossible.
                 </p>
-                <a href="technology" class="btn-secondary">Learn More</a>
+                <a href="#technology" class="btn-secondary">Learn More</a>
             </div>
         </div>
     </section>

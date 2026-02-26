@@ -173,6 +173,63 @@ body {
 }
 
 /* ==========================================================================
+   Telemetry HUD & Scanner
+   ========================================================================== */
+
+/* scanner red line across hero */
+.scanner-line {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-nasa-red);
+    opacity: 0.3;
+    box-shadow: 0 0 8px rgba(252,61,33,0.6);
+    animation: scan 5s linear infinite;
+    pointer-events: none;
+    z-index: 3;
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.telemetry-hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    color: var(--color-light-grey);
+    z-index: 1500;
+}
+
+.hud-item {
+    position: absolute;
+    padding: 0.25rem 0.5rem;
+    line-height: 1.2;
+}
+
+.top-left { top: 1rem; left: 1rem; }
+.top-right { top: 1rem; right: 1rem; }
+.bottom-left { bottom: 1rem; left: 1rem; }
+.bottom-right { bottom: 1rem; right: 1rem; }
+
+.hud-value { color: var(--color-nasa-red); }
+.flicker { animation: flicker 1.6s infinite; }
+
+@keyframes flicker {
+    0%,100% { opacity: 1; }
+    25%,75% { opacity: 0.85; }
+    50% { opacity: 0.7; }
+}
+
+/* ==========================================================================
    Hero Section
    ========================================================================== */
 
