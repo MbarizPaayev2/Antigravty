@@ -19,7 +19,6 @@ A NASA.gov–inspired single-page web prototype titled **Antigravity**. Built wi
 
 - HTML5
 - CSS3 (Flexbox & Grid, animations, custom properties)
-- No JavaScript, frameworks, or backend required
 
 ## 🧭 Navigation
 
@@ -40,9 +39,6 @@ Use hash links within the page for smooth scrolling:
 / (workspace root)
 ├─ index.html
 ├─ styles.css
-├─ favicon.svg
-├─ apple-touch-icon.svg
-├─ manifest.json
 └─ README.md
 ```
 
