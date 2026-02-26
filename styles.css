@@ -1,0 +1,633 @@
+/* ==========================================================================
+   ANTIGRAVITY: NASA.GOV INSPIRED DESIGN SYSTEM
+   Pure CSS3 Implementation 
+   ========================================================================== */
+
+/* Root Variables */
+:root {
+    --color-cosmos-black: #000000;
+    --color-pure-white: #ffffff;
+    --color-nasa-red: #fc3d21;
+    --color-charcoal: #111111;
+    --color-dark-grey: #1a1a1a;
+    --color-light-grey: #666666;
+    --color-border-grey: #333333;
+    
+    --font-primary: 'Inter', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+    --letter-spacing-tight: 2px;
+    --letter-spacing-normal: 1px;
+    --transition-smooth: all 0.5s ease-in-out;
+}
+
+/* ==========================================================================
+   Global Reset & Base Styles
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-cosmos-black);
+    color: var(--color-pure-white);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* ==========================================================================
+   Global Navigation Header
+   ========================================================================== */
+
+.global-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-charcoal);
+    border-bottom: 1px solid var(--color-border-grey);
+    backdrop-filter: blur(10px);
+    background-color: rgba(17, 17, 17, 0.95);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    gap: 2rem;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: var(--letter-spacing-tight);
+    color: var(--color-pure-white);
+    flex-shrink: 0;
+}
+
+.logo-prefix {
+    color: var(--color-nasa-red);
+    font-size: 1.5rem;
+}
+
+.logo-text {
+    text-transform: uppercase;
+}
+
+.nav-links-center {
+    display: flex;
+    gap: 3rem;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--color-pure-white);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: var(--letter-spacing-normal);
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-nasa-red);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--color-nasa-red);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-search {
+    background: none;
+    border: none;
+    color: var(--color-pure-white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-search:hover {
+    color: var(--color-nasa-red);
+}
+
+.btn-live {
+    background-color: var(--color-nasa-red);
+    color: var(--color-cosmos-black);
+    border: none;
+    padding: 0.6rem 1.4rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: var(--letter-spacing-normal);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0;
+    transition: var(--transition-smooth);
+    animation: pulse-glow 2s infinite;
+}
+
+.btn-live:hover {
+    background-color: var(--color-pure-white);
+    box-shadow: 0 0 20px rgba(252, 61, 33, 0.6);
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(252, 61, 33, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(252, 61, 33, 0.8);
+    }
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.9) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: var(--letter-spacing-tight);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: var(--color-pure-white);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    color: var(--color-pure-white);
+    line-height: 1.8;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-nasa-red);
+    color: var(--color-cosmos-black);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: var(--letter-spacing-normal);
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border-radius: 0;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-pure-white);
+    color: var(--color-cosmos-black);
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Latest Updates Section (News/Mission Grid)
+   ========================================================================== */
+
+.latest-updates {
+    background-color: var(--color-cosmos-black);
+    padding: 5rem 2rem;
+}
+
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: var(--letter-spacing-tight);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--color-pure-white);
+}
+
+.nasa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.nasa-card {
+    background-color: var(--color-charcoal);
+    border: 1px solid var(--color-border-grey);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    border-radius: 0;
+}
+
+.nasa-card:hover {
+    border-color: var(--color-nasa-red);
+    box-shadow: 0 0 25px rgba(252, 61, 33, 0.3);
+}
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: var(--color-dark-grey);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.nasa-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-tag {
+    display: inline-block;
+    background-color: var(--color-nasa-red);
+    color: var(--color-cosmos-black);
+    padding: 0.4rem 0.8rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: var(--letter-spacing-normal);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    width: fit-content;
+    border-radius: 0;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: var(--letter-spacing-normal);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    color: var(--color-pure-white);
+}
+
+.card-excerpt {
+    font-size: 0.95rem;
+    color: var(--color-light-grey);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Featured Feature Section (2-Column Layout)
+   ========================================================================== */
+
+.featured-feature {
+    background-color: var(--color-charcoal);
+    padding: 5rem 2rem;
+    border-top: 1px solid var(--color-border-grey);
+    border-bottom: 1px solid var(--color-border-grey);
+}
+
+.featured-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.featured-image {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border-grey);
+    height: 100%;
+    min-height: 400px;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in-out;
+}
+
+.featured-image:hover img {
+    transform: scale(1.08);
+}
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-title {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: var(--letter-spacing-tight);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: var(--color-pure-white);
+}
+
+.featured-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid var(--color-nasa-red);
+    padding-left: 1rem;
+}
+
+.spec-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: var(--letter-spacing-normal);
+    text-transform: uppercase;
+    color: var(--color-light-grey);
+    margin-bottom: 0.3rem;
+}
+
+.spec-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-pure-white);
+}
+
+.featured-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-light-grey);
+    margin-bottom: 2rem;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-nasa-red);
+    border: 2px solid var(--color-nasa-red);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: var(--letter-spacing-normal);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0;
+    transition: var(--transition-smooth);
+    width: fit-content;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-nasa-red);
+    color: var(--color-cosmos-black);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+    background-color: var(--color-charcoal);
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--color-border-grey);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+}
+
+.footer-column h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: var(--letter-spacing-normal);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--color-pure-white);
+}
+
+.footer-column p,
+.footer-column a {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-light-grey);
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--color-nasa-red);
+}
+
+.footer-disclaimer {
+    border-top: 1px solid var(--color-border-grey);
+    padding-top: 2rem;
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-disclaimer p {
+    font-size: 0.8rem;
+    color: var(--color-light-grey);
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .nav-links-center {
+        gap: 1.5rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .featured-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .featured-specs {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-logo {
+        flex: 1 0 100%;
+        justify-content: center;
+    }
+
+    .nav-links-center {
+        flex: 1 0 100%;
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .nav-actions {
+        flex: 1 0 100%;
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .nasa-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-title {
+        font-size: 1.5rem;
+    }
+
+    .featured-specs {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+    .latest-updates,
+    .featured-feature {
+        padding: 2rem 1rem;
+    }
+
+    .card-tag {
+        font-size: 0.7rem;
+    }
+}
